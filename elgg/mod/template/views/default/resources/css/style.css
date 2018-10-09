@@ -1,0 +1,306 @@
+/*********************** Template *****************************************************************/
+.header-cover{
+    margin-top:10px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+    border-radius: 0px 30px 30px 0px;
+}
+.stylish-input-group .form-control{
+	border-right: 0; 
+	box-shadow:0 0 0; 
+    border-color:#ccc;
+    border-radius: 30px;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.header-cover -webkit-input-placeholder { 
+    text-align:right; 
+    margin-right: 30px;
+}
+.input-group {
+    margin-top: 60px;
+}
+.btn-top{
+    margin-top:60px;
+    text-align: center;
+}
+.btn-top input{
+    width: 150px;
+}
+.artsquare{
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 65px;
+}
+.artsquare a{
+    text-decoration: none;
+}
+.signup, .signin{
+    font-size: 16px;
+    margin-top: 65px;
+    text-align: right;
+    font-weight: 600;
+    position: relative;
+}
+.signin span{
+    font-size: 12px;
+}
+.signin a, .signup a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/*********************************** End Template *******************************************************/
+
+/******************************************** Home Page *************************************************************/
+#tools{
+    width: 40px;
+    height: 320px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    left:120px;
+    top: 200px;
+    text-align: center;
+    z-index: 11;
+    background: #ffffff;
+    -webkit-box-shadow: 10px 10px 6px -6px #777;
+    -moz-box-shadow: 10px 10px 6px -6px #777;
+    box-shadow: 10px 10px 6px -6px #777;
+}
+#tools div{
+    padding: 10px 0px;  
+    cursor: pointer;
+}
+#tools img{
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ffffff;
+}
+#myCanvas{
+    border: 25px solid #dadada;
+    border-radius: 10px;
+    position: absolute;
+    margin: auto;
+    top:70px;
+    left:0;
+    right:0;
+    z-index: 10;
+}
+#colorPalette{
+    position: relative;
+}
+#colorTable{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 200px;
+    height: 100px;
+    padding: 10px ;
+    position: absolute;
+    left: 50px;
+    top: -100px;
+    display: none;
+    background: white;
+}
+#colorTable thead{
+    text-align: center;
+    background: #dadada;
+}
+#colorTable tr td{
+    border: 1px solid white;
+}
+#lineWidth{
+    position: relative;
+}
+#lineWidthTable{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 70px;
+    height: 300px;
+    padding: 10px ;
+    position: absolute;
+    left: 50px;
+    top: -100px;
+    display: none;
+    background: white;
+}
+#lineWidthTable tr td{
+    border: 1px solid white;
+}
+#brush{
+    position: relative;
+}
+#brushTable{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50px;
+    height: 250px;
+    padding: 10px ;
+    position: absolute;
+    left: 50px;
+    top: -100px;
+    display: none;
+    background: white;
+}
+#brushTable tr td{
+    border: 1px solid white;
+}
+#downloadImg{
+    background: #69c;
+    color: #fff;
+    padding: 5px 10px;
+}
+#btnSavePicture{
+    position: absolute;
+    right: 100px;
+    bottom: 50px;
+    margin: auto;
+    cursor: pointer;
+    z-index: 12;
+}
+#showPicture{
+    border: 1px solid #B9D3EE;
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    margin-top:600px;
+}
+#backgroundPainting{
+    height: 900px;
+    margin: auto;
+    position: relative;
+}
+#btnImportPicture{
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 750px;
+}
+/****************************************** End Home Page ***************************************/
+/***************************** Footer **************************/
+.footer{
+    background: #e6e6e6;
+    padding: 20px 40px;
+    color: #9a9a9a;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.footer h2{
+    font-weight: 600;
+    padding-left: 15px;
+}
+.legal{
+    text-align: right;
+}
+.legal, .policy{
+    color: #448cca;
+    cursor: pointer;
+}
+/******************* End Footer ***************************/
+/************* Sign In Box ***************************/
+#signin-box .modal-header .modal-title{
+    text-align: center;
+}
+#signin-box .modal-content{
+    width: 400px;
+    position: absolute;
+}
+.form-group label{
+    text-align: left;
+    display: block;
+}
+.form-group input{
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0px 5px;
+}
+
+#signin-box .modal-footer button{
+    margin:20px 0px;
+    width: 100%;
+    font-size: 16px;
+}
+#signin-box .modal-footer #forgot_button{
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+}
+#signin-box .modal-footer #signup-link{
+    text-align: right;
+    color: #b4b4b4;
+    font-style: italic;
+}
+/********** End Sign In Box ******************************/
+
+/************* Forgot Password Box ***************************/
+#forgot-box .modal-header .modal-title{
+    text-align: center;
+}
+#forgot-box .modal-content{
+    width: 400px;
+    position: absolute;
+}
+.form-group label{
+    text-align: left;
+    display: block;
+}
+.form-group input{
+    text-align: left;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0px 5px;
+}
+
+#forgot-box .modal-footer button{
+    margin:20px 0px;
+    width: 100%;
+    font-size: 16px;
+}
+/********** End Forgot Password Box ******************************/
+
+/**************** Sign up **********************/
+.signup-cover{
+    width: 50%;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 50px auto;
+    padding: 10px 100px 50px 100px;
+}
+.signup-cover h2{
+    margin-bottom: 50px;
+}
+.signup-cover .btn{
+    width: 100%;
+}
+.signup-cover -webkit-input-placeholder { 
+    padding-left: 80px;
+}
+.signup-cover label{
+    display: inline-block !important;
+}
+.signup-cover select{
+    height: 30px;
+    margin: 0px 20px;
+}
+/************** End Sign Up ****************/
