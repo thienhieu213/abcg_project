@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/style.css">
+<link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/owl.carousel.min.css">
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/responsive.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
@@ -24,16 +25,13 @@
             </div>
         </div>
         <div class="col-lg-2 col-md-2 btn-top">
-            <input class="btn btn-warning " value="Explore Arts">
+            <button class="btn btn-warning">Explore Arts</button>
         </div>
-        <div class="col-lg-1 col-md-1 artsquare">
+        <div class="col-lg-2 col-md-2 artsquare">
             <a>Artsquare</a>
         </div>
-        <div class="col-lg-1 col-md-1 signup">
-            <a href='signup'>Sign up</a>
-        </div>
-        <div class="col-lg-1 col-md-1 signin">
-            <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign in <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+        <div class="col-lg-2 col-md-2 signin">
+            <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign In / Sign Up <span class="glyphicon glyphicon-triangle-bottom"></span></a>
              <!-- Modal -->
             <form method="post" id="formSignin">
                 <div class="modal fade" id="signin-box" role="dialog">
@@ -53,11 +51,15 @@
                                     <label>Password</label>
                                     <input type="password" name="passwordSignin">
                                 </div>
+
+                                <a id="forgot_button">Forgot Password?</a>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Log in!</button>
                             </div>
                             <div class="modal-footer">
-                                <a id="forgot_button" >Forgot Password?</a>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Log in!</button>
-                                <a href="signup" id="signup-link">or Sign Up</a>
+                                <a href="signup" id="signup-link">Sign Up</a>
+                                <img src="./img/facebook.png">
+                                <img src="./img/twitter.png">
+                                <img src="./img/google.png">
                             </div>
                         </div>
                     </div>

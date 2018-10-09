@@ -8,7 +8,8 @@
     <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/UndoRedo.js"></script>  
     <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/eraser.js"></script>   
     <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/colorTable.js"></script>     
-    <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/paintOnline.js"></script>  
+    <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/paintOnline.js"></script>
+    <script type="text/javascript" src = "mod/template_footer/views/default/resources/js/owl.carousel.min.js"></script>  
     <script>
         $(document).ready(function(){
             $('#forgot_button').click(function(){
