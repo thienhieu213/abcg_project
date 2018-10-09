@@ -196,7 +196,7 @@
     background: #e6e6e6;
     padding: 20px 40px;
     color: #9a9a9a;
-    position: absolute;
+    /*position: absolute; */
     bottom: 0;
     width: 100%;
 }
@@ -292,6 +292,7 @@
 }
 .signup-cover .btn{
     width: 100%;
+    margin-bottom: 20px;
 }
 .signup-cover -webkit-input-placeholder { 
     padding-left: 80px;
@@ -301,6 +302,66 @@
 }
 .signup-cover select{
     height: 30px;
-    margin: 0px 20px;
+    margin: 0px 5px;
 }
+#dayOfBirth, #gender{
+    text-align: left;
+}
+#dayOfBirth label{
+    margin-right: 15px;
+}
+#gender label{
+    margin-right: 50px;
+}
+.btn-facebook{
+    
+    width: 45% !important;
+    float: left;
+    font-size: 20px;
+}
+.btn-facebook i{
+    margin-right: 15px;
+}
+.btn-twitter{
+    border:1px solid #00bff3;
+    width: 45% !important;
+    float: right;
+    background-color: #00bff3;
+    font-size: 20px;
+}
+.btn-twitter:hover{
+    background-color: #448cca;
+    border:1px solid #448cca;
+}
+.btn-twitter i{
+    margin-right: 15px;
+}
+
+.btn-google{
+  
+    font-size: 20px;
+}
+.btn-google:hover{
+    background-color: #e6e6e6;
+}
+.btn-google i{
+    margin-right: 15px;
+}
+.btn-create{
+    font-size: 20px;
+    background-color: #00adef;
+    margin-top:20px;
+    border: 1px solid #00adef;
+}
+.signup-cover p{
+    color: #00adef;
+    font-weight: 600;
+}
+.signup-cover .checkbox{
+    color: #00bff3;
+    text-align: left;
+}
+
+
+
 /************** End Sign Up ****************/

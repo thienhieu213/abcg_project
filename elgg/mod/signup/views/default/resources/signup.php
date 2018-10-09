@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/style.css">
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/responsive.css">
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 </head>
 <body onload="dayOfBirth()">
@@ -33,17 +33,29 @@
         <div class="form-group">
             <input type="password" name="confirmSignup" placeholder="Confirm Password">
         </div>
-        <div class="form-group">
+        <div class="form-group" id="dayOfBirth">
             <label>Date of birth</label>
             <select name="day" id="day"></select>
             <select name="month" id="month"></select>
             <select name="year" id="year"></select>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="gender">
             <label>Gender</label>
-            <select name="gender" ></select>
+            <select name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
         </div>
-        <button type="submit" class="btn btn-primary">Create Account</button>
+        <p>OR</p>
+        <button class="btn btn-primary btn-facebook"><i class="fab fa-facebook-f"></i>Facebook</button>
+        <button class="btn btn-primary btn-twitter"><i class="fab fa-twitter"></i>Twitter</button>
+        <button class="btn btn-default btn-google"><i class="fab fa-google"></i>Google</button>
+
+        <div class="checkbox checkbox-design" >
+        <label for="checkbox-design"><input type="checkbox" value="policy" id="checkbox-design"/>I have read and agreed to ABCG Terms of Service and Etiquette Policy</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-create">Create Account</button>
     </form>
 
 
