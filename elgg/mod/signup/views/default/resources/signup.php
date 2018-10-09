@@ -17,21 +17,24 @@
 </div>
 <div class="signup-cover">
     <h2>Sign Up</h2>
-    <form method="post" id="formSignup">
+    <form method="post" id="formSignup" action="action/register">
         <div class="form-group">
-            <input type="text" name="nameSignup" placeholder="Name">
+            <?php $__elgg_ts = time(); ?>
+            <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
+            <input name="__elgg_token" value="<?php echo generate_action_token($__elgg_ts) ?>" type="hidden">
+            <input type="text" name="name" placeholder="Name">
         </div>
         <div class="form-group">
-            <input type="text" name="usernameSignup" placeholder="Username">
+            <input type="text" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <input type="text" name="emailSignup" placeholder="Email">
+            <input type="text" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input type="password" name="passwordSignup" placeholder="Password">
+            <input type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <input type="password" name="confirmSignup" placeholder="Confirm Password">
+            <input type="password" name="password2" placeholder="Confirm Password">
         </div>
         <div class="form-group">
             <label>Date of birth</label>

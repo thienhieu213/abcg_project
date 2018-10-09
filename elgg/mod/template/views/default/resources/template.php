@@ -19,7 +19,7 @@
                 <span class="input-group-addon">
                     <button type="submit">
                         <span class="glyphicon glyphicon-search"></span>
-                    </button>  
+                    </button>
                 </span>
             </div>
         </div>
@@ -35,7 +35,9 @@
         <div class="col-lg-1 col-md-1 signin">
             <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign in <span class="glyphicon glyphicon-triangle-bottom"></span></a>
              <!-- Modal -->
-            <form method="post" id="formSignin">
+            <form method="post" id="formSignin"
+            action="http://localhost/elgg-example/elgg/action/login"
+            enctype="multipart/form-data">
                 <div class="modal fade" id="signin-box" role="dialog">
                     <div class="modal-dialog">
                     <!-- Modal content-->
@@ -46,17 +48,22 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
+                                    <?php $__elgg_ts = time(); ?>
+                                    <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
+                                    <input name="__elgg_token" value="<?php echo generate_action_token($__elgg_ts) ?>" type="hidden">
                                     <label>Username</label>
-                                    <input type="text" name="usernameSignin">
+                                    <input type="text" name="username">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input type="password" name="passwordSignin">
+                                    <input type="password" name="password">
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <a id="forgot_button" >Forgot Password?</a>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Log in!</button>
+                                <div class="form-group">
+                                  <button type="submit" class="btn btn-primary">Log in!</button>
+                                </div>
                                 <a href="signup" id="signup-link">or Sign Up</a>
                             </div>
                         </div>
@@ -64,7 +71,8 @@
                 </div>
             </form>
 
-            <form method="post" id="formForgot">
+            <form method="post" id="formForgot"
+            action="action/user/requestnewpassword">
                 <div class="modal fade" id="forgot-box" role="dialog">
                     <div class="modal-dialog">
                     <!-- Modal content-->
@@ -75,18 +83,21 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
+                                    <?php $__elgg_ts = time(); ?>
+                                    <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
+                                    <input name="__elgg_token" value="<?php echo generate_action_token($__elgg_ts) ?>" type="hidden">
                                     <label>Email</label>
-                                    <input type="text" name="emailForgot">
+                                    <input type="text" name="username">
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Send Email</button>
+                                <button type="submit" class="btn btn-primary">Send Email</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
+</body>
