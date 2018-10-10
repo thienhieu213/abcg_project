@@ -17,7 +17,7 @@
 </div>
 <div class="signup-cover">
     <h2>Sign Up</h2>
-    <form method="post" id="formSignup" action="action/register">
+    <form method="post" id="formSignup" action="action/abcg_register">
         <div class="form-group">
             <?php $__elgg_ts = time(); ?>
             <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
