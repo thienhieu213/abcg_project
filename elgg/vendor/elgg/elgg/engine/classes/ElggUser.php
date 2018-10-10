@@ -30,7 +30,7 @@ class ElggUser extends \ElggEntity
 	public function getType() {
 		return 'user';
 	}
-	
+
 	/**
 	 * Get user language or default to site language
 	 *
@@ -80,20 +80,20 @@ class ElggUser extends \ElggEntity
 				}
 				break;
 		}
-		
+
 		parent::__set($name, $value);
 	}
-	
+
 	/**
 	 * {@inheritdoc}
 	 */
 	public function getURL() {
-		
+
 		$result = parent::getURL();
 		if ($result !== '') {
 			return $result;
 		}
-		
+
 		return elgg_normalize_url("user/view/{$this->guid}");
 	}
 
@@ -109,14 +109,14 @@ class ElggUser extends \ElggEntity
 		if (!$this->canEdit()) {
 			return false;
 		}
-		
+
 		if (!_elgg_services()->events->trigger('ban', 'user', $this)) {
 			return false;
 		}
 
 		$this->ban_reason = $reason;
 		$this->banned = 'yes';
-				
+
 		$this->invalidateCache();
 
 		return true;
@@ -128,7 +128,7 @@ class ElggUser extends \ElggEntity
 	 * @return bool
 	 */
 	public function unban() {
-		
+
 		if (!$this->canEdit()) {
 			return false;
 		}
@@ -139,7 +139,7 @@ class ElggUser extends \ElggEntity
 
 		unset($this->ban_reason);
 		$this->banned = 'no';
-				
+
 		$this->invalidateCache();
 
 		return true;
@@ -163,7 +163,7 @@ class ElggUser extends \ElggEntity
 		$ia = _elgg_services()->session->setIgnoreAccess(true);
 		$is_admin = ($this->admin == 'yes');
 		_elgg_services()->session->setIgnoreAccess($ia);
-		
+
 		return $is_admin;
 	}
 
@@ -173,7 +173,7 @@ class ElggUser extends \ElggEntity
 	 * @return bool
 	 */
 	public function makeAdmin() {
-		
+
 		if ($this->isAdmin()) {
 			return true;
 		}
@@ -185,7 +185,7 @@ class ElggUser extends \ElggEntity
 		$this->admin = 'yes';
 
 		$this->invalidateCache();
-		
+
 		return true;
 	}
 
@@ -207,29 +207,29 @@ class ElggUser extends \ElggEntity
 		$this->admin = 'no';
 
 		$this->invalidateCache();
-		
+
 		return true;
 	}
-	
+
 	/**
 	 * Sets the last logon time of the user to right now.
 	 *
 	 * @return void
 	 */
 	public function setLastLogin() {
-		
+
 		$time = $this->getCurrentTime()->getTimestamp();
-		
+
 		if ($this->last_login == $time) {
 			// no change required
 			return;
 		}
-		
+
 		// these writes actually work, we just type hint read-only.
 		$this->prev_last_login = $this->last_login;
 		$this->last_login = $time;
 	}
-	
+
 	/**
 	 * Sets the last action time of the given user to right now.
 	 *
@@ -238,24 +238,24 @@ class ElggUser extends \ElggEntity
 	 * @return void
 	 */
 	public function setLastAction() {
-		
+
 		$time = $this->getCurrentTime()->getTimestamp();
-		
+
 		if ($this->last_action == $time) {
 			// no change required
 			return;
 		}
-		
+
 		$user = $this;
-		
+
 		elgg_register_event_handler('shutdown', 'system', function () use ($user, $time) {
 			// these writes actually work, we just type hint read-only.
 			$user->prev_last_action = $user->last_action;
-		
+
 			$user->updateLastAction($time);
 		});
 	}
-	
+
 	/**
 	 * Gets the validation status of a user.
 	 *
@@ -267,7 +267,7 @@ class ElggUser extends \ElggEntity
 		}
 		return (bool) $this->validated;
 	}
-	
+
 	/**
 	 * Set the validation status for a user.
 	 *
@@ -276,16 +276,16 @@ class ElggUser extends \ElggEntity
 	 * @return void
 	 */
 	public function setValidationStatus($status, $method = '') {
-		
+
 		$this->validated = $status;
 		$this->validated_method = $method;
-		
+
 		if ((bool) $status) {
 			// make sure the user is enabled
 			if (!$this->isEnabled()) {
 				$this->enable();
 			}
-			
+
 			// let the system know the user is validated
 			_elgg_services()->events->triggerAfter('validate', 'user', $this);
 		} else {
@@ -445,6 +445,8 @@ class ElggUser extends \ElggEntity
 		$object = parent::prepareObject($object);
 		$object->name = $this->getDisplayName();
 		$object->username = $this->username;
+		$object->dob = $this->dob;
+		$object->gender = $this->gender;
 		$object->language = $this->language;
 		unset($object->read_access);
 		return $object;
@@ -508,7 +510,7 @@ class ElggUser extends \ElggEntity
 		}
 
 		return $settings;
-	
+
 	}
 
 	/**
@@ -548,7 +550,7 @@ class ElggUser extends \ElggEntity
 
 		parent::invalidateCache();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
@@ -558,7 +560,7 @@ class ElggUser extends \ElggEntity
 			// cleanup remember me cookie records
 			_elgg_services()->persistentLogin->removeAllHashes($this);
 		}
-		
+
 		return $result;
 	}
 }

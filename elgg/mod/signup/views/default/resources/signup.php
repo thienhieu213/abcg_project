@@ -17,7 +17,7 @@
 </div>
 <div class="signup-cover">
     <h2>Sign Up</h2>
-    <form method="post" id="formSignup" action="action/abcg_register">
+    <form method="post" id="formSignup" action="action/register">
         <div class="form-group">
             <?php $__elgg_ts = time(); ?>
             <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
@@ -44,7 +44,10 @@
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select name="gender" ></select>
+            <select name="gender" >
+              <option>M</option>
+              <option>F</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Create Account</button>
     </form>

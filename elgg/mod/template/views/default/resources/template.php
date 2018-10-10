@@ -36,7 +36,7 @@
             <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign in <span class="glyphicon glyphicon-triangle-bottom"></span></a>
              <!-- Modal -->
             <form method="post" id="formSignin"
-            action="http://localhost/elgg-example/elgg/action/login"
+            action="action/login"
             enctype="multipart/form-data">
                 <div class="modal fade" id="signin-box" role="dialog">
                     <div class="modal-dialog">
