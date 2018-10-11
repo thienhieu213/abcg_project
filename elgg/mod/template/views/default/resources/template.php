@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/owl.carousel.min.css">
 <link rel="stylesheet" type="text/css" href="mod/template/views/default/resources/css/responsive.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
 </head>
 <body>
 <div class="header-cover">
@@ -23,12 +24,13 @@
                     </button>  
                 </span>
             </div>
+            <div id="advancedSearch" data-toggle="modal" data-target="#advancedSearch-box">Advanced Search <span class="glyphicon glyphicon-triangle-bottom"></span></div>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 btn-top">
             <button class="btn btn-warning">Explore Arts</button>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 artsquare">
-            <a>Artsquare</a>
+            <a href="artsquare">Artsquare</a>
         </div>
         <div class="col-lg-2 col-md-2 col-sm-2 signin">
             <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign In / Sign Up <span class="glyphicon glyphicon-triangle-bottom"></span></a>
@@ -83,6 +85,41 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Send Email</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form method="post" id="formAdvancedSearch">
+                <div class="modal fade" id="advancedSearch-box" role="dialog">
+                    <div class="modal-dialog">
+                    <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Type of arts :</label><br/>
+                                    <input type="checkbox" name="typeArt" value="mixedMedia"> Mixed media<br/>
+                                    <input type="checkbox" name="typeArt" value="drawing"> Drawing <br/>
+                                    <input type="checkbox" name="typeArt" value="paiting"> Painting <br/>
+                                    <input type="checkbox" name="typeArt" value="photography"> Photography <br/>
+                                    <input type="checkbox" name="typeArt" value="printings"> Printings <br/>
+                                    <input type="checkbox" name="typeArt" value="sculptures"> Sculptures <br/>
+                                    <input type="checkbox" name="typeArt" value="others"> Others <br/>
+                                </div>
+                                <div class="form-group">
+                                    <label>Color uses :</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label>Filter by :</label><br/>
+                                    <input type="radio" name="filter" value="artpiece"> Artpiece <br/>
+                                    <input type="radio" name="filter" value="artist"> Artist <br/>
+                                    <input type="radio" name="filter" value="brand"> Brand <br/>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Search</button>
                             </div>
                         </div>
                     </div>

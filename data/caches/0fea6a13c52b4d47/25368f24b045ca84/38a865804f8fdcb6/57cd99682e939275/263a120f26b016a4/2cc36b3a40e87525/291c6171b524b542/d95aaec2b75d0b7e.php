@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/da.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-11T08:40:27+07:00 */
+/* Expiration: 2018-10-12T16:56:19+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539222027;
+$expiration = 1539338179;
 
 $data = array();
 
@@ -98,4 +98,4 @@ Se og kommenter på det nye blog indlæg:
 \";s:23:\"blog:widget:description\";s:27:\"Vis dit seneste blogindlæg\";s:14:\"blog:moreblogs\";s:17:\"Flere blogindlæg\";s:20:\"blog:numbertodisplay\";s:36:\"Antal af blogindlæg, der skal vises\";s:12:\"blog:noblogs\";s:17:\"Ingen blogindlæg\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539145335;
+$data['createdOn'] = 1539254085;

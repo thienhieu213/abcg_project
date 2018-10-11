@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/zh_hans.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-11T07:57:21+07:00 */
+/* Expiration: 2018-10-12T15:09:30+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539219441;
+$expiration = 1539331770;
 
 $data = array();
 
@@ -62,4 +62,4 @@ $data['return'] = "a:235:{s:7:\"profile\";s:6:\"简历\";s:16:\"profile:notfound
 \";s:23:\"blog:widget:description\";s:24:\"显示你最近的博文\";s:14:\"blog:moreblogs\";s:12:\"更多博文\";s:20:\"blog:numbertodisplay\";s:21:\"要显示的博文数\";s:12:\"blog:noblogs\";s:12:\"没有博文\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539145335;
+$data['createdOn'] = 1539254085;

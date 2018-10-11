@@ -221,7 +221,6 @@
                 </div>          
             </div>
         </div>     
-
         <div class="modal fade" id="artLibDetail" role="dialog">
             <div class="modal-dialog">
             <!-- Modal content-->
@@ -231,9 +230,23 @@
                     </div>
                     <div class="modal-body">
                         <div class="main-pic">
+                            <div class="main-pic-user">
+                                <img src="./img/user.png">
+                                <div class="main-pic-user-info">
+                                    <p>Originally created by<p>
+                                    <p>Danieal Revession</p>
+                                </div>
+                            </div>
+                            <div class="main-pic-time">Oct 30, 2018</div>
                             <div class="main-pic-img">
                                 <img src="./img/logo.png">
                             </div>
+                            <div class="main-pic-tag">
+                                <i class="fas fa-tag"></i><span>#red</span><span>#line</span><span>#cute</span>
+                            </div>
+                            <div class="main-pic-repaint"><i class="fas fa-palette"></i> repaint</div>
+                            <div class="main-pic-bow"><i class="fas fa-award"></i><span> 259 </span> bow</div>
+                            
                         </div>
                         <div class="relative-pic">
                             <div class="relative-pic-title">Repaint Feed</div>

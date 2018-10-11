@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/ca.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-11T09:14:12+07:00 */
+/* Expiration: 2018-10-12T17:15:43+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539224052;
+$expiration = 1539339343;
 
 $data = array();
 
@@ -49,4 +49,4 @@ Veure i comentar el nou missatge:
 \";s:23:\"blog:widget:description\";s:49:\"Aquest giny mostra les darreres entrades al bloc.\";s:14:\"blog:moreblogs\";s:13:\"Més entrades\";s:20:\"blog:numbertodisplay\";s:36:\"Nombre d'entrades del bloc a mostrar\";s:12:\"blog:noblogs\";s:26:\"No hi ha entrades del bloc\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539145335;
+$data['createdOn'] = 1539254085;

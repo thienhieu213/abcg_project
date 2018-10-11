@@ -60,7 +60,29 @@
     cursor: pointer;
     text-decoration: none;
 }
-
+#advancedSearch{
+    font-size: 12px;
+    color:#337ab7;
+    font-style: italic;
+    margin: 10px;
+    cursor: pointer;
+}
+#formAdvancedSearch .form-group{
+    float:left;
+    font-weight: 200;
+    margin: 10px 35px;
+}
+#formAdvancedSearch .form-group input{
+    margin-right:10px;
+}
+#formAdvancedSearch .modal-footer{
+    border: 0;
+    text-align: center;
+}
+#formAdvancedSearch .modal-footer button{
+    border-radius: 60px;
+    padding: 5px 20px;
+}
 /*********************************** End Template *******************************************************/
 
 /******************************************** Home Page *************************************************************/
@@ -295,11 +317,11 @@
 #signin-box .modal-body{
     text-align: right;
 }
-.form-group label{
+#signin-box .form-group label{
     text-align: left;
     display: block;
 }
-.form-group input{
+#signin-box .form-group input{
     text-align: left;
     width: 100%;
     height: 40px;
@@ -346,11 +368,11 @@
     width: 400px;
     position: absolute;
 }
-.form-group label{
+#forgot-box .form-group label{
     text-align: left;
     display: block;
 }
-.form-group input{
+#forgot-box .form-group input{
     text-align: left;
     width: 100%;
     height: 40px;
@@ -382,9 +404,11 @@
     width: 100%;
     margin-bottom: 20px;
 }
-.signup-cover -webkit-input-placeholder { 
-    padding-left: 80px;
+/*
+.signup-cover ::-webkit-input-placeholder { 
+    padding-left: 10px;
 }
+*/
 .signup-cover label{
     display: inline-block !important;
 }
@@ -392,8 +416,18 @@
     height: 30px;
     margin: 0px 5px;
 }
+.signup-cover input{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #cdcdcd;
+    padding-left:10px ;
+}
 #dayOfBirth, #gender{
     text-align: left;
+}
+#dayOfBirth select, #gender select{
+    border-radius: 5px;
 }
 #dayOfBirth label{
     margin-right: 15px;
@@ -448,6 +482,10 @@
     color: #00bff3;
     text-align: left;
 }
+.signup-cover .checkbox input{
+    height: 16px;
+    width: 16px;
+}
 
 /************** End Sign Up ****************/
 /**************************************** Box Art Library Detail **************************************/
@@ -463,6 +501,7 @@
 }
 #artLibDetail .modal-header .close{
     float: left;
+    color:#00bff3;
 }
 #artLibDetail .modal-body .main-pic{
     width: 70%;
@@ -481,27 +520,37 @@
 #artLibDetail .modal-body .relative-pic .relative-pic-title{
     color:#00bff3;
     font-size: 16px;
+    margin-bottom: 30px;
+    font-weight: 600;
 }
 #artLibDetail .modal-body .relative-pic .relative-pic-img{
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-/* width */
+#artLibDetail .modal-body .relative-pic .relative-pic-img img{
+    margin: 5px;
+}
+/** scroll bar **/
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 14px;
+    height: 18px;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
-    border-radius: 10px;
-}
- 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #b4b4b4; 
-    border-radius: 10px;
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05); 
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
 }
 
 /* Handle on hover */
@@ -514,4 +563,89 @@
 #artLibDetail .modal-footer{
     border:none;
 }
+.main-pic-user{
+    width: 45%;
+    display: inline-block;
+    position: relative;
+}
+.main-pic-user img{
+    width:50px;
+} 
+.main-pic-user .main-pic-user-info{
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    top: 5px;
+} 
+.main-pic-user .main-pic-user-info p{
+    margin: 0px;
+}
+.main-pic-user .main-pic-user-info p:first-child{
+    color: white;
+}
+.main-pic-user .main-pic-user-info p:last-child{
+    font-weight: 600;
+    color: #00adef;
+}
+.main-pic-time{
+    width: 45%; 
+    text-align: right;
+    float: right;
+    font-style: italic;
+    margin-top: 20px;
+    color:white;
+}
+.main-pic-img{
+    margin-top: 15px;
+}
+#artLibDetail .modal-content{
+    background: none;
+    box-shadow: none;
+    border: 0;
+}
+.main-pic .main-pic-tag {
+    margin: 10px;
+    color:white;
+    display: inline-block;
+} 
+.main-pic .main-pic-bow {
+    margin: 10px;
+    color:#00bff3;
+    float: right;
+    cursor: pointer;
+} 
+.main-pic .main-pic-repaint {
+    margin: 10px;
+    color:#00bff3;
+    float: right;
+    cursor: pointer;
+} 
+.main-pic .main-pic-tag span{
+    margin: 0px 10px;
+} 
 /**************************************** End Box Art Library Detail **************************************/
+/********** Artshelves Page ***************/
+.artshelves-page{
+    margin: 30px 50px;
+}
+.artshelves-page h1{
+    color: #00bff3;
+    font-weight: 600;
+}
+.artshelves-page .trending{
+    margin-top: 40px;
+    border-bottom: 2px solid #b4b4b4;
+}
+.artshelves-page .trending button{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.artshelves-page .explore{
+    margin-top: 40px;
+    border-bottom: 2px solid #b4b4b4;
+}
+.artshelves-page .explore button{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+/********* End Artshelves Page ***************/

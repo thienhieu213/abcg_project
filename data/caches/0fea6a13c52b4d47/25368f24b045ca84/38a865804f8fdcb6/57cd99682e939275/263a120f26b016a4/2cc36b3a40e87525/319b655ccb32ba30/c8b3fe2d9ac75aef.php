@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/ro_ro.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-11T08:11:35+07:00 */
+/* Expiration: 2018-10-12T15:22:13+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539220295;
+$expiration = 1539332533;
 
 $data = array();
 
@@ -24,4 +24,4 @@ Vezi și comentează la postarea de blog:
 \";s:23:\"blog:widget:description\";s:40:\"Afișează-ți ultimele postări de blog\";s:14:\"blog:moreblogs\";s:26:\"Mai multe postări de blog\";s:20:\"blog:numbertodisplay\";s:44:\"Numărul de postări de blog pentru afișare\";s:12:\"blog:noblogs\";s:27:\"Nu există postări de blog\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539145335;
+$data['createdOn'] = 1539254085;
