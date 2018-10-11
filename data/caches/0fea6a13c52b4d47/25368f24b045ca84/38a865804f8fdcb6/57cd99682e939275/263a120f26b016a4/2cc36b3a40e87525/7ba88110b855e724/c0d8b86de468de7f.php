@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/ru.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T12:49:38+07:00 */
+/* Expiration: 2018-10-11T08:03:03+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539150578;
+$expiration = 1539219783;
 
 $data = array();
 
@@ -124,4 +124,4 @@ View and comment on the blog post:
 \";s:17:\"widgets:blog:name\";s:10:\"Blog posts\";s:24:\"widgets:blog:description\";s:46:\"Показать последние посты\";s:14:\"blog:moreblogs\";s:42:\"Показать больше постов\";s:20:\"blog:numbertodisplay\";s:48:\"Число отображаемых постов\";s:35:\"activity:widgets:river_widget:title\";s:31:\"Лента активности\";s:41:\"activity:widgets:river_widget:description\";s:75:\"Показать новые записи в ленте активности\";s:34:\"activity:widgets:river_widget:type\";s:27:\"Вид активности\";s:37:\"activity:widgets:river_widget:friends\";s:33:\"Активность друзей\";s:33:\"activity:widgets:river_widget:all\";s:56:\"Активность всех пользователей\";s:37:\"activity:widgets:group_activity:title\";s:33:\"Активность группы\";s:43:\"activity:widgets:group_activity:description\";s:91:\"Показать ленту активности из одной из ваших групп\";s:43:\"activity:widgets:group_activity:edit:select\";s:29:\"Выберите группу\";s:50:\"activity:widgets:group_activity:content:noactivity\";s:69:\"Эта группа на данный момент неактивна\";s:48:\"activity:widgets:group_activity:content:noselect\";s:97:\"Перейдите к настройкам виджета, чтобы выбрать группу\";s:22:\"collection:river:group\";s:33:\"Активность группы\";s:20:\"groups:tool:activity\";s:50:\"Включить активность группы\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

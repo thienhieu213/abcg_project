@@ -11,10 +11,10 @@
 <body>
 <div class="header-cover">
     <div class="row">
-        <div class="col-lg-2 col-md-2 logo">
+        <div class="col-lg-2 col-md-2 col-sm-2 logo">
             <img src="./img/logo.png">
         </div>
-        <div class="col-lg-4 col-md-4">
+        <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="input-group stylish-input-group">
                 <input type="text" class="form-control"  placeholder="Search" >
                 <span class="input-group-addon">
@@ -24,13 +24,13 @@
                 </span>
             </div>
         </div>
-        <div class="col-lg-2 col-md-2 btn-top">
+        <div class="col-lg-2 col-md-2 col-sm-2 btn-top">
             <button class="btn btn-warning">Explore Arts</button>
         </div>
-        <div class="col-lg-2 col-md-2 artsquare">
+        <div class="col-lg-2 col-md-2 col-sm-2 artsquare">
             <a>Artsquare</a>
         </div>
-        <div class="col-lg-2 col-md-2 signin">
+        <div class="col-lg-2 col-md-2 col-sm-2 signin">
             <a id="signin_button" data-toggle="modal" data-target="#signin-box">Sign In / Sign Up <span class="glyphicon glyphicon-triangle-bottom"></span></a>
              <!-- Modal -->
             <form method="post" id="formSignin">

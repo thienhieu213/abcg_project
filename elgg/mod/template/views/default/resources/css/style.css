@@ -66,7 +66,7 @@
 /******************************************** Home Page *************************************************************/
 #tools{
     width: 40px;
-    height: 360px;
+    height: 380px;
     border: 1px solid black;
     border-radius: 5px;
     position: absolute;
@@ -90,7 +90,7 @@
 }
 #myCanvas{
     border: 25px solid #dadada;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     position: absolute;
     margin: auto;
     top:70px;
@@ -102,24 +102,20 @@
     position: relative;
 }
 #colorTable{
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 5px;
     width: 200px;
     height: 100px;
-    padding: 10px ;
     position: absolute;
     left: 50px;
     top: -100px;
     display: none;
     background: white;
 }
-#colorTable thead{
+#colorTable thead tr th{
     text-align: center;
     background: #dadada;
 }
 #colorTable tr td{
-    border: 1px solid white;
+    border: 2px solid white;
 }
 #lineWidth{
     position: relative;
@@ -182,7 +178,7 @@
     margin-top:600px;
 }
 #backgroundPainting{
-    height: 900px;
+    height: 920px;
     margin: auto;
     position: relative;
 }
@@ -196,8 +192,67 @@
     margin: auto;
     top: 750px;
 }
-#artLibraryTemplate{
-    height: 100px;
+#artLibraryTemplate{ 
+    height: 200px;
+    position: relative;
+    border: 50px solid #dadada;
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+}
+#left-btn{
+    background-image: url('../img/left-btn.png');
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    top: 30px;
+    left: -50px;
+}
+#right-btn{
+    background-image: url('../img/right-btn.png');
+    width: 70px;
+    height: 70px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    top: 30px;
+    right: -50px;
+}
+#titleLibTem{
+    border-radius: 10px 10px 0px 0px;
+    background-color:#337ab7;
+    color:white;
+    padding: 7px;
+    width: 130px;
+    text-align: center;
+    position: absolute;
+    top: -35px;
+}
+#titleLibTem p{
+    margin: 0px;
+}
+#moreArt{
+    border-radius: 10px;
+    background-color:red;
+    color: white;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: -55px;
+    right:10px;
+    z-index: 10;
+    cursor: pointer;
+}
+#moreArt img{
+    width: 30%;
+    height: 60%;
+}
+.owl-stage{
+    overflow: hidden;
+    height: 120px;
 }
 /****************************************** End Home Page ***************************************/
 /***************************** Footer **************************/
@@ -394,6 +449,69 @@
     text-align: left;
 }
 
-
-
 /************** End Sign Up ****************/
+/**************************************** Box Art Library Detail **************************************/
+#artLibDetail .modal-dialog{
+    width: 80%;
+}
+#artLibDetail .modal-header img{
+    width: 30px;
+}
+#artLibDetail .modal-header{
+    border:none;
+    background-color:none;
+}
+#artLibDetail .modal-header .close{
+    float: left;
+}
+#artLibDetail .modal-body .main-pic{
+    width: 70%;
+    float: left;
+}
+
+#artLibDetail .modal-body .main-pic .main-pic-img img{
+    width: 100%;
+    height: 100%;
+}
+#artLibDetail .modal-body .relative-pic{
+    width: 20%;
+    float: right;
+    height: 600px;
+}
+#artLibDetail .modal-body .relative-pic .relative-pic-title{
+    color:#00bff3;
+    font-size: 16px;
+}
+#artLibDetail .modal-body .relative-pic .relative-pic-img{
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #b4b4b4; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #666666; 
+}
+.clear{
+    clear: both;
+}
+#artLibDetail .modal-footer{
+    border:none;
+}
+/**************************************** End Box Art Library Detail **************************************/

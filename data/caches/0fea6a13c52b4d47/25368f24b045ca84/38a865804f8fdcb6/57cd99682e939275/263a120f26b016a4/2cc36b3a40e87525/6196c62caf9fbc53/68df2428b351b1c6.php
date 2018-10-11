@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/eu_es.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T11:02:32+07:00 */
+/* Expiration: 2018-10-11T08:21:02+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539144152;
+$expiration = 1539220862;
 
 $data = array();
 
@@ -110,4 +110,4 @@ Ikusi eta iruzkina idatzi bidalketan:
 \";s:23:\"blog:widget:description\";s:35:\"Zure azken blog bidalketak erakutsi\";s:14:\"blog:moreblogs\";s:22:\"Blog bidalketa gehiago\";s:20:\"blog:numbertodisplay\";s:33:\"Erakusteko blog bidalketa kopurua\";s:12:\"blog:noblogs\";s:25:\"Ez dago blog bidalketarik\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

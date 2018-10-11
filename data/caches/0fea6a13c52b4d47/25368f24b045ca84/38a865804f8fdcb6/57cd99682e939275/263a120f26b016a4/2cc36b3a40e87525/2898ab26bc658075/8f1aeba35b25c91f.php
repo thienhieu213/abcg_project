@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/cmn.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T11:58:42+07:00 */
+/* Expiration: 2018-10-11T11:21:05+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539147522;
+$expiration = 1539231665;
 
 $data = array();
 
@@ -44,4 +44,4 @@ $data['return'] = "a:87:{s:28:\"item:object:reported_content\";s:15:\"報告的�
 \";s:25:\"garbagecollector:optimize\";s:13:\"最佳化 %s \";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

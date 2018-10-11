@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/sr_latin.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T11:52:14+07:00 */
+/* Expiration: 2018-10-11T08:55:21+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539147134;
+$expiration = 1539222921;
 
 $data = array();
 
@@ -19,4 +19,4 @@ Pogledaj i komentariši članak:
 \";s:23:\"blog:widget:description\";s:26:\"Prikaži najnovije članke\";s:14:\"blog:moreblogs\";s:17:\"Još blog postova\";s:20:\"blog:numbertodisplay\";s:23:\"Broj članaka za prikaz\";s:12:\"blog:noblogs\";s:17:\"Nema blog postova\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

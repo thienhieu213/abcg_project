@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/ko.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T11:59:32+07:00 */
+/* Expiration: 2018-10-11T09:37:27+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539147572;
+$expiration = 1539225447;
 
 $data = array();
 
@@ -70,4 +70,4 @@ $data['return'] = "a:266:{s:7:\"thewire\";s:6:\"쪽글\";s:19:\"item:object:thew
 \";s:17:\"widgets:blog:name\";s:13:\"블로그 글\";s:24:\"widgets:blog:description\";s:49:\"당신의 최근 블로그 글을 표시합니다\";s:14:\"blog:moreblogs\";s:22:\"블로그글 더보기\";s:20:\"blog:numbertodisplay\";s:29:\"출력할 블로그글의 수\";s:35:\"activity:widgets:river_widget:title\";s:6:\"활동\";s:41:\"activity:widgets:river_widget:description\";s:21:\"최근 활동 표시 \";s:34:\"activity:widgets:river_widget:type\";s:13:\"활동 종류\";s:37:\"activity:widgets:river_widget:friends\";s:13:\"친구 활동\";s:33:\"activity:widgets:river_widget:all\";s:23:\"모든 사이트 활동\";s:37:\"activity:widgets:group_activity:title\";s:13:\"모둠 활동\";s:43:\"activity:widgets:group_activity:description\";s:37:\"당신의 한 모둠의 활동 보기\";s:43:\"activity:widgets:group_activity:edit:select\";s:13:\"모둠 선택\";s:50:\"activity:widgets:group_activity:content:noactivity\";s:36:\"이 모둠에 활동이 없습니다\";s:48:\"activity:widgets:group_activity:content:noselect\";s:59:\"모둠을 선택하기 위해 이 위젯을 수정하세요\";s:22:\"collection:river:group\";s:13:\"모둠 활동\";s:20:\"groups:tool:activity\";s:23:\"모둠 활동 활성화\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

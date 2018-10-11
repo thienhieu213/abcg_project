@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/tr.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T13:10:14+07:00 */
+/* Expiration: 2018-10-11T09:59:42+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539151814;
+$expiration = 1539226782;
 
 $data = array();
 
@@ -21,4 +21,4 @@ Blog gönderisini görüntüle ve yorum yap:
 \";s:23:\"blog:widget:description\";s:33:\"Son blog gönderilerinizi göster\";s:14:\"blog:moreblogs\";s:26:\"Daha fazla blog gönderisi\";s:20:\"blog:numbertodisplay\";s:38:\"Gösterilecek blog gönderisi sayısı\";s:12:\"blog:noblogs\";s:19:\"Blog gönderisi yok\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;

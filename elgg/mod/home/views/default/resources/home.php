@@ -1,6 +1,7 @@
 
         <div id="backgroundPainting">
             <div id="tools">
+                <div id="drag" style="padding:0px;"><img src="./img/drag.png" style="height:17px;cursor:move"></div>
                 <div id="newpage"><img src="./img/new-page.png"></div>
                 <div id="pencil"><img src="./img/pencil.png"></div>
                 <!--
@@ -194,15 +195,62 @@
             <!--<input id="btnImportPicture" type='file' accept=".jpg,.png,.svg"> -->
         </div>
         <div id="artLibraryTemplate">
-            <div class="owl-carousel owl-theme">
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
-                <div class="item"><img src="./img/logo.png"></div>
+            <div id="titleLibTem"><p>Paint with others</p></div>
+            <div id="moreArt" data-toggle="modal" data-target="#artLibDetail"><span>More Pictures </span><img src="./img/dice.png"></div>
+            <div id="cover-carousel">
+                <div class="owl-carousel owl-theme owl-loaded" id="library-owl-carousel">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage">
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                            <li class="owl-item"><img src="./img/logo.png"></li>
+                        </div>
+                    </div>
+                    <div class="owl-nav">
+                        <div id="left-btn"></div>
+                        <div id="right-btn"></div>
+                    </div>
+                </div>          
+            </div>
+        </div>     
+
+        <div class="modal fade" id="artLibDetail" role="dialog">
+            <div class="modal-dialog">
+            <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><img src="./img/back.png"> Back</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="main-pic">
+                            <div class="main-pic-img">
+                                <img src="./img/logo.png">
+                            </div>
+                        </div>
+                        <div class="relative-pic">
+                            <div class="relative-pic-title">Repaint Feed</div>
+                            <div class="relative-pic-img">
+                                <img src="./img/logo.png">
+                                <img src="./img/logo.png">
+                                <img src="./img/logo.png">
+                                <img src="./img/logo.png">
+                                <img src="./img/logo.png">
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+                </div>
             </div>
         </div>
         <!-- <div id="showPicture"></div> -->

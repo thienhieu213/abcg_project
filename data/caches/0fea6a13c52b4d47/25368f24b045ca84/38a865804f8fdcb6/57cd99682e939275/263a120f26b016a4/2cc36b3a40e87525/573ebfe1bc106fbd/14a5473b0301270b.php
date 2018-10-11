@@ -1,12 +1,12 @@
 <?php 
 /* Cachekey: cache/stash_default/elgg_system_cache/sr.lang/ */
 /* Type: array */
-/* Expiration: 2018-10-10T12:07:14+07:00 */
+/* Expiration: 2018-10-11T10:50:47+07:00 */
 
 
 
 $loaded = true;
-$expiration = 1539148034;
+$expiration = 1539229847;
 
 $data = array();
 
@@ -44,4 +44,4 @@ $data['return'] = "a:281:{s:7:\"thewire\";s:8:\"Жица\";s:16:\"thewire:everyo
 \";s:23:\"blog:widget:description\";s:66:\"Прикажи твоје најновије блог чланке\";s:14:\"blog:moreblogs\";s:32:\"Више блог чланака\";s:20:\"blog:numbertodisplay\";s:50:\"Број блог чланака за приказ\";s:12:\"blog:noblogs\";s:33:\"Нема блог чланака.\";}";
 
 /* Child Type: integer */
-$data['createdOn'] = 1539067231;
+$data['createdOn'] = 1539145335;
