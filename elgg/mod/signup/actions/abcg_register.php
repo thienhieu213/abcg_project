@@ -9,10 +9,10 @@
 if($_POST && isset($_POST['username'], $_POST['password'],
 $_POST['password2'], $_POST['email'], $_POST['name'])) {
 
-    $username = $_POST['$username'];
-    $password = $_POST['$password'];
-    $password2 = $_POST['$password2'];
-    $email = $_POST['$email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $password2 = $_POST['password2'];
+    $email = $_POST['email'];
     $name = $_POST['name'];
     $dayBirth = $_POST['day'];
     $monthBirth = $_POST['month'];
@@ -39,6 +39,7 @@ $_POST['password2'], $_POST['email'], $_POST['name'])) {
     		throw new RegistrationException(implode(PHP_EOL, $messages));
     	}
 
+      $dob_timestamp = strtotime($day + '-' + $month + '-' + $year);
     	$guid = register_user($username, $password, $name, $email);
     	if (!$guid) {
     		throw new RegistrationException(elgg_echo('registerbad'));

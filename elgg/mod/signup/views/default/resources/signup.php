@@ -44,7 +44,10 @@
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select name="gender" ></select>
+            <select name="gender" >
+              <option>M</option>
+              <option>F</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Create Account</button>
     </form>
