@@ -58,8 +58,9 @@
             for (var i=1;i<32;i++){
                 var sel = document.getElementById("day");
                 var op = document.createElement("OPTION");
-                var val = document.createTextNode(i);
-                op.setAttribute("value",i);
+                var day = formatNumber(i);
+                var val = document.createTextNode(day);
+                op.setAttribute("value",day);
                 op.appendChild(val);
                 sel.appendChild(op);
             }
@@ -68,8 +69,9 @@
             for (var i=1;i<=12;i++){
                 var sel = document.getElementById("month");
                 var op = document.createElement("OPTION");
-                var val = document.createTextNode(i);
-                op.setAttribute("value",i);
+                var month = formatNumber(i);
+                var val = document.createTextNode(month);
+                op.setAttribute("value",month);
                 op.appendChild(val);
                 sel.appendChild(op);
             }
@@ -88,6 +90,9 @@
             day();
             month();
             year();
+        }
+        function formatNumber(n) {
+          return n > 9 ? "" + n: "0" + n;
         }
     </script>
 </div>

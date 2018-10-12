@@ -37,7 +37,9 @@ try {
 		throw new RegistrationException(implode(PHP_EOL, $messages));
 	}
 
-  $dob_timestamp = strtotime($day + '-' + $month + '-' + $year);
+	$date=new DateTime($year . '-' . $month . '-' . $day);
+	$dob_timestamp = $date->getTimestamp();
+
 	$guid = register_abcg_user($username, $password, $name, $email,
   $dob_timestamp, $gender);
 
