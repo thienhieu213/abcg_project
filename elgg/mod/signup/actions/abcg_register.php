@@ -5,94 +5,91 @@
 
 /* @var $request \Elgg\Request */
 
-// elgg_make_sticky_form('register');
-if($_POST && isset($_POST['username'], $_POST['password'],
-$_POST['password2'], $_POST['email'], $_POST['name'])) {
+elgg_make_sticky_form('register');
+if (!elgg_get_config('allow_registration')) {
+	return elgg_error_response(elgg_echo('registerdisabled'));
+}
 
-    $username = $_POST['$username'];
-    $password = $_POST['$password'];
-    $password2 = $_POST['$password2'];
-    $email = $_POST['$email'];
-    $name = $_POST['name'];
-    $dayBirth = $_POST['day'];
-    $monthBirth = $_POST['month'];
-    $yearBirth = $_POST['year'];
-    $gender = $_POST['gender'];
+// Get variables
+$username = $request->getParam('username');
+$password = $request->getParam('password', null, false);
+$password2 = $request->getParam('password2', null, false);
+$email = $request->getParam('email');
+$name = $request->getParam('name');
+$day = $request->getParam('day');
+$month = $request->getParam('month');
+$year = $request->getParam('year');
+$gender = $request->getParam('gender');
 
-    if (!elgg_get_config('allow_registration')) {
-    	return elgg_error_response(elgg_echo('registerdisabled'));
-    }
+$username = trim($username);
+$name = trim(strip_tags($name));
+$email = trim($email);
 
-    // Get variables
-    $username = trim($username);
-    $name = trim(strip_tags($name));
-    $email = trim($email);
+try {
+	$validation = elgg_validate_registration_data($username, [$password, $password2], $name, $email);
+	$failures = $validation->getFailures();
 
-    try {
-    	$validation = elgg_validate_registration_data($username, [$password, $password2], $name, $email);
-    	$failures = $validation->getFailures();
-    	if ($failures) {
-    		$messages = array_map(function (\Elgg\Validation\ValidationResult $e) {
-    			return $e->getError();
-    		}, $failures);
+	if ($failures) {
+		$messages = array_map(function (\Elgg\Validation\ValidationResult $e) {
+			return $e->getError();
+		}, $failures);
 
-    		throw new RegistrationException(implode(PHP_EOL, $messages));
-    	}
+		throw new RegistrationException(implode(PHP_EOL, $messages));
+	}
 
-    	$guid = register_user($username, $password, $name, $email);
-    	if (!$guid) {
-    		throw new RegistrationException(elgg_echo('registerbad'));
-    	}
+  $dob_timestamp = strtotime($day + '-' + $month + '-' + $year);
+	$guid = register_abcg_user($username, $password, $name, $email,
+  $dob_timestamp, $gender);
 
-    	$new_user = get_user($guid);
+	if (!$guid) {
+		throw new RegistrationException(elgg_echo('registerbad'));
+	}
+	$new_user = get_user($guid);
+	$fail = function () use ($new_user) {
+		elgg_call(ELGG_IGNORE_ACCESS, function () use ($new_user) {
+			$new_user->delete();
+		});
+	};
 
-    	$fail = function () use ($new_user) {
-    		elgg_call(ELGG_IGNORE_ACCESS, function () use ($new_user) {
-    			$new_user->delete();
-    		});
-    	};
+	try {
+		// allow plugins to respond to self registration
+		// note: To catch all new users, even those created by an admin,
+		// register for the create, user event instead.
+		// only passing vars that aren't in ElggUser.
+		$params = $request->getParams();
+		$params['user'] = $new_user;
+		if (!elgg_trigger_plugin_hook('register', 'user', $params, true)) {
+			throw new RegistrationException(elgg_echo('registerbad'));
+		}
+	} catch (\Exception $e) {
+		// Catch all exception to make sure there are no incomplete user entities left behind
+		$fail();
+		throw $e;
+	}
 
-    	try {
-    		// allow plugins to respond to self registration
-    		// note: To catch all new users, even those created by an admin,
-    		// register for the create, user event instead.
-    		// only passing vars that aren't in ElggUser.
-    		$params = $request->getParams();
-    		$params['user'] = $new_user;
+	elgg_clear_sticky_form('register');
 
-    		if (!elgg_trigger_plugin_hook('register', 'user', $params, true)) {
-    			throw new RegistrationException(elgg_echo('registerbad'));
-    		}
-    	} catch (\Exception $e) {
-    		// Catch all exception to make sure there are no incomplete user entities left behind
-    		$fail();
-    		throw $e;
-    	}
+	$response_data = [
+		'user' => $new_user,
+	];
 
-    	elgg_clear_sticky_form('register');
+	if (!$new_user->isEnabled()) {
+		// Plugins can alter forwarding URL by registering for 'response', 'action:register' hook
+		return elgg_ok_response($response_data);
+	}
 
-    	$response_data = [
-    		'user' => $new_user,
-    	];
+	try {
+		login($new_user);
+		// set forward url
+		$forward_url = _elgg_get_login_forward_url($request, $new_user);
+		$response_message = elgg_echo('registerok', [elgg_get_site_entity()->getDisplayName()]);
 
-    	if (!$new_user->isEnabled()) {
-    		// Plugins can alter forwarding URL by registering for 'response', 'action:register' hook
-    		return elgg_ok_response($response_data);
-    	}
-
-    	try {
-    		login($new_user);
-    		// set forward url
-    		$forward_url = _elgg_get_login_forward_url($request, $new_user);
-    		$response_message = elgg_echo('registerok', [elgg_get_site_entity()->getDisplayName()]);
-
-    		return elgg_ok_response($response_data, $response_message, $forward_url);
-    	} catch (LoginException $e) {
-    		// if exception thrown, this probably means there is a validation
-    		// plugin that has disabled the user
-    		return elgg_error_response($e->getMessage(), REFERRER, $e->getCode() ? : ELGG_HTTP_UNAUTHORIZED);
-    	}
-    } catch (RegistrationException $r) {
-    	return elgg_error_response($r->getMessage(), REFERRER, $r->getCode() ? : ELGG_HTTP_BAD_REQUEST);
-    }
+		return elgg_ok_response($response_data, $response_message, $forward_url);
+	} catch (LoginException $e) {
+		// if exception thrown, this probably means there is a validation
+		// plugin that has disabled the user
+		return elgg_error_response($e->getMessage(), REFERRER, $e->getCode() ? : ELGG_HTTP_UNAUTHORIZED);
+	}
+} catch (RegistrationException $r) {
+	return elgg_error_response($r->getMessage(), REFERRER, $r->getCode() ? : ELGG_HTTP_BAD_REQUEST);
 }

@@ -17,10 +17,6 @@ $password = $request->getParam('password', null, false);
 $password2 = $request->getParam('password2', null, false);
 $email = $request->getParam('email');
 $name = $request->getParam('name');
-$day = $request->getParam('day');
-$month = $request->getParam('month');
-$year = $request->getParam('year');
-$gender = $request->getParam('gender');
 
 $username = trim($username);
 $name = trim(strip_tags($name));
@@ -37,8 +33,7 @@ try {
 		throw new RegistrationException(implode(PHP_EOL, $messages));
 	}
 
-	$dob_timestamp = strtotime($day + '-' + $month + '-' + $year);
-	$guid = register_abcg_user($username, $password, $name, $email, $dob_timestamp, $gender);
+	$guid = register_user($username, $password, $name, $email);
 	if (!$guid) {
 		throw new RegistrationException(elgg_echo('registerbad'));
 	}
