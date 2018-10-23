@@ -179,6 +179,69 @@ class Accounts {
 		$user->username = $username;
 		$user->email = $email;
 		$user->name = $name;
+		$user->dob = '';
+		$user->gender = '';
+		$user->access_id = ACCESS_PUBLIC;
+		$user->owner_guid = 0; // Users aren't owned by anyone, even if they are admin created.
+		$user->container_guid = 0; // Users aren't contained by anyone, even if they are admin created.
+		$user->language = $this->translator->getCurrentLanguage();
+
+		if ($user->save() === false) {
+			return false;
+		}
+
+		// doing this after save to prevent metadata save notices on unwritable metadata password_hash
+		$user->setPassword($password);
+
+		// Turn on email notifications by default
+		$user->setNotificationSetting('email', true);
+
+		return $user->getGUID();
+	}
+
+	/**
+	 * Registers a user, returning false if the username already exists
+	 *
+	 * @param string $username              The username of the new user
+	 * @param string $password              The password
+	 * @param string $name                  The user's display name
+	 * @param string $email                 The user's email address
+	 * @param int 	 $dob_timestamp         The user's dob
+	 * @param string $gender                The user's gender
+	 * @param bool   $allow_multiple_emails Allow the same email address to be
+	 *                                      registered multiple times?
+	 * @param string $subtype               Subtype of the user entity
+	 *
+	 * @return int|false The new user's GUID; false on failure
+	 * @throws RegistrationException
+	 */
+	public function register_abcg_user($username, $password, $name, $email,
+	$dob_timestamp, $gender,
+	$allow_multiple_emails = false, $subtype = null) {
+
+		$this->assertValidAccountData($username, $password, $name, $email, $allow_multiple_emails);
+
+		// Create user
+		$constructor = ElggUser::class;
+		if (isset($subtype)) {
+			$class = elgg_get_entity_class('user', $subtype);
+			if ($class && class_exists($class) && is_subclass_of($class, ElggUser::class)) {
+				$constructor = $class;
+			}
+		}
+
+		$user = new $constructor();
+		/* @var $user ElggUser */
+
+		if (isset($subtype)) {
+			$user->subtype = $subtype;
+		}
+
+		$user->username = $username;
+		$user->email = $email;
+		$user->name = $name;
+		$user->dob = $dob_timestamp;
+		$user->gender = $gender;
 		$user->access_id = ACCESS_PUBLIC;
 		$user->owner_guid = 0; // Users aren't owned by anyone, even if they are admin created.
 		$user->container_guid = 0; // Users aren't contained by anyone, even if they are admin created.

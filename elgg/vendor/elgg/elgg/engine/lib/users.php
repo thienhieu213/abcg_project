@@ -207,6 +207,30 @@ function register_user($username, $password, $name, $email, $allow_multiple_emai
 }
 
 /**
+ * Registers a user, returning false if the username already exists
+ *
+ * @param string $username              The username of the new user
+ * @param string $password              The password
+ * @param string $name                  The user's display name
+ * @param string $email                 The user's email address
+ * @param int 	 $dob_timestamp         The user's date of birth
+ * @param string $gender                The user's gender
+ * @param bool   $allow_multiple_emails Allow the same email address to be
+ *                                      registered multiple times?
+ * @param string $subtype               Subtype of the user entity
+ *
+ * @return int|false The new user's GUID; false on failure
+ * @throws RegistrationException
+ */
+function register_abcg_user($username, $password, $name, $email,
+$dob_timestamp, $gender,
+$allow_multiple_emails = false, $subtype = null) {
+	return elgg()->accounts->register_abcg_user($username, $password, $name, $email,
+	$dob_timestamp, $gender,
+	$allow_multiple_emails, $subtype);
+}
+
+/**
  * Assert that given registration details are valid and can be used to register the user
  *
  * @param string       $username              The username of the new user
@@ -449,7 +473,7 @@ function _elgg_user_title_menu(\Elgg\Hook $hook) {
 	if (!$user->canEdit()) {
 		return;
 	}
-	
+
 	$return = $hook->getValue();
 	$return[] = ElggMenuItem::factory([
 		'name' => 'avatar:edit',
@@ -458,7 +482,7 @@ function _elgg_user_title_menu(\Elgg\Hook $hook) {
 		'class' => ['elgg-button', 'elgg-button-action'],
 		'href' => elgg_generate_entity_url($user, 'edit', 'avatar'),
 	]);
-	
+
 	return $return;
 }
 
@@ -721,18 +745,18 @@ function _elgg_user_prepare_unban_notification($hook, $type, $return_value, $par
  * @internal
  */
 function _elgg_user_unvalidated_menu(\Elgg\Hook $hook) {
-	
+
 	if (!elgg_is_admin_logged_in()) {
 		return;
 	}
-	
+
 	$entity = $hook->getEntityParam();
 	if (!$entity instanceof ElggUser || $entity->isValidated()) {
 		return;
 	}
-	
+
 	$return = $hook->getValue();
-	
+
 	$return[] = ElggMenuItem::factory([
 		'name' => 'validate',
 		'text' => elgg_echo('validate'),
@@ -742,7 +766,7 @@ function _elgg_user_unvalidated_menu(\Elgg\Hook $hook) {
 		'confirm' => true,
 		'priority' => 400,
 	]);
-	
+
 	$return[] = ElggMenuItem::factory([
 		'name' => 'delete',
 		'text' => elgg_echo('delete'),
@@ -752,7 +776,7 @@ function _elgg_user_unvalidated_menu(\Elgg\Hook $hook) {
 		'confirm' => elgg_echo('deleteconfirm'),
 		'priority' => 500,
 	]);
-	
+
 	return $return;
 }
 

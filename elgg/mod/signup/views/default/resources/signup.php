@@ -17,21 +17,24 @@
 </div>
 <div class="signup-cover">
     <h2>Sign Up</h2>
-    <form method="post" id="formSignup">
+    <form method="post" id="formSignup" action="action/abcg_register">
         <div class="form-group">
-            <input type="text" name="nameSignup" placeholder="Name">
+            <?php $__elgg_ts = time(); ?>
+            <input name="__elgg_ts" value="<?php echo $__elgg_ts ?>" type="hidden">
+            <input name="__elgg_token" value="<?php echo generate_action_token($__elgg_ts) ?>" type="hidden">
+            <input type="text" name="name" placeholder="Name">
         </div>
         <div class="form-group">
-            <input type="text" name="usernameSignup" placeholder="Username">
+            <input type="text" name="username" placeholder="Username">
         </div>
         <div class="form-group">
-            <input type="text" name="emailSignup" placeholder="Email">
+            <input type="text" name="email" placeholder="Email">
         </div>
         <div class="form-group">
-            <input type="password" name="passwordSignup" placeholder="Password">
+            <input type="password" name="password" placeholder="Password">
         </div>
         <div class="form-group">
-            <input type="password" name="confirmSignup" placeholder="Confirm Password">
+            <input type="password" name="password2" placeholder="Confirm Password">
         </div>
         <div class="form-group">
             <label>Date of birth</label>
@@ -41,7 +44,10 @@
         </div>
         <div class="form-group">
             <label>Gender</label>
-            <select name="gender" ></select>
+            <select name="gender" >
+              <option>M</option>
+              <option>F</option>
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Create Account</button>
     </form>
@@ -52,8 +58,9 @@
             for (var i=1;i<32;i++){
                 var sel = document.getElementById("day");
                 var op = document.createElement("OPTION");
-                var val = document.createTextNode(i);
-                op.setAttribute("value",i);
+                var day = formatNumber(i);
+                var val = document.createTextNode(day);
+                op.setAttribute("value",day);
                 op.appendChild(val);
                 sel.appendChild(op);
             }
@@ -62,8 +69,9 @@
             for (var i=1;i<=12;i++){
                 var sel = document.getElementById("month");
                 var op = document.createElement("OPTION");
-                var val = document.createTextNode(i);
-                op.setAttribute("value",i);
+                var month = formatNumber(i);
+                var val = document.createTextNode(month);
+                op.setAttribute("value",month);
                 op.appendChild(val);
                 sel.appendChild(op);
             }
@@ -82,6 +90,9 @@
             day();
             month();
             year();
+        }
+        function formatNumber(n) {
+          return n > 9 ? "" + n: "0" + n;
         }
     </script>
 </div>
